@@ -9,7 +9,7 @@ interface IProps {
   initialPosition: { x: number; y: number }
 }
 
-const Hero = (props) => {
+const Hero = (props: IProps) => {
   const moviment = useHeroMoviment(props.initialPosition);
   return (
     <div style={{

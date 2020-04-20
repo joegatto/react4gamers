@@ -8,7 +8,7 @@ interface IProps {
   initialPosition: { x: number; y: number }
 }
 
-const Demon = (props) => {
+const Demon = (props: IProps) => {
   const moviment = useEnemyMoviment(props.initialPosition);
   return (
     <div style={{
