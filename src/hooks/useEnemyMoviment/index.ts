@@ -14,10 +14,17 @@ function useEnemyMoviment(initialPosition) {
     const randomDirection = directionArray[random];
 
     const moviment = canvasContext.updateCanvas(direction, position, EWalker.ENEMY);
-  
+
     if (moviment.nextMove.valid) {
       updateDirectionState(randomDirection);
       updatePositionState(moviment.nextPosition);
+    }
+
+    if (moviment.nextMove.dead) {
+      setTimeout(() => {
+        alert("Você morreu!");
+      })
+      window.location.reload();
     }
   }, 2000);
 
